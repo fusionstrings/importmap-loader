@@ -2,7 +2,10 @@
   "name": "@fusionstrings/importmap-loader",
   "version": "0.0.1",
   "description": "",
-  "main": "main.js",
+  "main": "importmap-loader.js",
+  "exports": {
+    ".": "./importmap-loader.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --experimental-loader ./importmap-loader.js ./main.js"
@@ -19,11 +22,11 @@
   "homepage": "https://github.com/fusionstrings/importmap-loader#readme",
   "type": "module",
   "dependencies": {
-    "@jspm/import-map": "^1.0.4",
-    "web-specs": "^2.46.0"
+    "@jspm/import-map": "^1.0.4"
   },
   "devDependencies": {
     "@jspm/generator": "^1.0.2",
-    "mkdirp": "^2.1.3"
+    "mkdirp": "^2.1.3",
+    "web-specs": "^2.46.0"
   }
 }

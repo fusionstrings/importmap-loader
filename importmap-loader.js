@@ -1,14 +1,9 @@
-// https-loader.mjs
 import { get } from 'node:https';
 import { ImportMap } from '@jspm/import-map';
 import importmap from './node.importmap.json' assert { type: 'json' };
 
 function resolve(specifier, context, nextResolve) {
     try {
-        console.log('resolve specifier: ', specifier);
-        console.log('resolve context: ', JSON.stringify(context, null, 2))
-        console.log('resolve nextResolve: ', JSON.stringify(nextResolve, null, 2))
-
         const mapUrl = import.meta.url;
 
         const map = new ImportMap({
@@ -17,7 +12,7 @@ function resolve(specifier, context, nextResolve) {
         });
 
         const importmapResolve = map.resolve(specifier);
-        console.log('inImportmap' + specifier, importmapResolve)
+        
         const { parentURL = null } = context;
 
         // Normally Node.js would error on specifiers starting with 'https://', so

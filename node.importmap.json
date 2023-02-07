@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "node:http": "node:http",
+    "web-specs": "https://ga.jspm.io/npm:web-specs@2.46.0/index.json.js"
+  }
+}

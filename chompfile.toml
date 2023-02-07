@@ -1,0 +1,15 @@
+default-task = 'build'
+
+version = 0.1
+extensions = ['chomp@0.1:jspm', 'chomp@0.1:npm']
+
+[template-options.npm]
+auto-install = true
+
+[[task]]
+name = "build"
+deps = ['main.js']
+target = 'node.importmap'
+template = 'jspm'
+[task.template-options]
+env = ['node', 'production']
